@@ -14,7 +14,22 @@ include 'includes/data/hotels.php';
 </head>
 
 <body>
-
+    <main>
+        <section id="hotels">
+            <h1>Hotels </h1>
+            <ul>
+                <?php foreach ($hotels as $hotel) : ?>
+                    <li>
+                        <h2>Name: <?= $hotel['name']; ?></h2>
+                        <p>Description: <?= $hotel['description']; ?></p>
+                        <p>Parking: <?= $hotel['parking'] ? 'Available' : 'Not available'; ?></p>
+                        <p>Vote: <?= $hotel['vote']; ?></p>
+                        <p>Distance to centre: <?= $hotel['distance_to_center']; ?> km</p>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+    </main>
 </body>
 
 </html>

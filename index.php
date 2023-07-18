@@ -2,8 +2,16 @@
 // Include Hotels
 include 'includes/data/hotels.php';
 // Include Icons
-include 'includes/data/icons.php'
+include 'includes/data/icons.php';
 
+// Filter hotels with parking
+$filtered_hotels = [];
+
+foreach ($hotels as $hotel) {
+    if (!isset($_GET['parking']) || ($_GET['parking'] === '1' && $hotel['parking'] === true)) {
+        $filtered_hotels[] = $hotel;
+    }
+};
 ?>
 
 <!-- Html -->
@@ -33,6 +41,17 @@ include 'includes/data/icons.php'
         <!-- Section -->
         <section id="hotels" class="container">
 
+            <!-- Form -->
+            <form method="GET" action="" class="mb-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" id="parking" name="parking">
+                    <label class="form-check-label" for="parking">
+                        Hotels with parking
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Filter</button>
+            </form>
+
             <!-- Table -->
             <table class="table table-primary">
 
@@ -50,7 +69,7 @@ include 'includes/data/icons.php'
                 <!-- Tbody -->
                 <tbody>
                     <!-- Foreach -->
-                    <?php foreach ($hotels as $hotel) : ?>
+                    <?php foreach ($filtered_hotels as $hotel) : ?>
                         <tr>
                             <td class="text-center"><?= $hotel['name']; ?></td>
                             <td class="text-center"><?= $hotel['description']; ?></td>

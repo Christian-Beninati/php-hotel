@@ -2,6 +2,11 @@
 // Include
 include 'includes/data/hotels.php';
 
+// Available
+$available = '<i class="fa-solid fa-circle-check text-success""></i>';
+// Not Available
+$not_available = '<i class="fa-solid fa-circle-xmark text-danger"></i>'
+
 ?>
 
 <!-- Html -->
@@ -13,6 +18,9 @@ include 'includes/data/hotels.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
     <title>PHP Hotel</title>
+
+    <!-- icons Font Awesome cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
@@ -48,7 +56,7 @@ include 'includes/data/hotels.php';
                         <tr>
                             <td class="text-center"><?= $hotel['name']; ?></td>
                             <td class="text-center"><?= $hotel['description']; ?></td>
-                            <td class="text-center"><?= $hotel['parking'] ? 'Available' : 'Not available'; ?></td>
+                            <td class="text-center"><?= $hotel['parking'] ? "$available" : "$not_available"; ?></td>
                             <td class="text-center"><?= $hotel['vote']; ?></td>
                             <td class="text-center"><?= $hotel['distance_to_center']; ?> km</td>
                         </tr>

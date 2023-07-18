@@ -1,11 +1,8 @@
 <?php
-// Include
+// Include Hotels
 include 'includes/data/hotels.php';
-
-// Available
-$available = '<i class="fa-solid fa-circle-check text-success""></i>';
-// Not Available
-$not_available = '<i class="fa-solid fa-circle-xmark text-danger"></i>'
+// Include Icons
+include 'includes/data/icons.php'
 
 ?>
 

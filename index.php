@@ -24,13 +24,14 @@ include 'includes/data/icons.php'
 </head>
 
 <body>
+    <!-- Header -->
+    <header>
+        <h1 class="my-5 text-center">Hotels </h1>
+    </header>
     <!-- Main -->
     <main>
         <!-- Section -->
         <section id="hotels" class="container">
-
-            <!-- H1 -->
-            <h1 class="my-5 text-center">Hotels </h1>
 
             <!-- Table -->
             <table class="table table-primary">
